@@ -104,7 +104,6 @@ echo ""
 cowsay "INSTALANDO DAHDI"
 echo ""
 sleep 5
-yum install epel-release -y
 rpm --import https://ast.tucny.com/repo/RPM-GPG-KEY-dtucny
 cat > /etc/yum.repos.d/tuncy-asterisk-13.repo <<EOF
 [asterisk-common]
@@ -129,7 +128,7 @@ echo ""
 cowsay "INSTALANDO ASTERISK 13"
 echo ""
 sleep 5
-yum install asterisk*
+yum install asterisk asterisk-ooh323 asterisk-mysql asterisk-curl asterisk-dahdi asterisk-hep asterisk-iax2 asterisk-moh-opsound asterisk-moh-opsound-g722 asterisk-mp3 asterisk-odbc asterisk-phone asterisk-pjsip asterisk-sip asterisk-sounds-core-en asterisk-sounds-core-en-g722 asterisk-voicemail -y
 chkconfig asterisk off
 chown asterisk. /var/run/asterisk
 chown -R asterisk. /etc/asterisk
